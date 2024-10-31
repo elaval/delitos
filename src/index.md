@@ -83,7 +83,7 @@ const comunaSeleccionada = view(Inputs.select(
   const maxYValue = delitoSeleccionado.match(/Violaciones y delitos sexuales/) && comunaSeleccionada.Comuna.match(/Alto Hospicio/) ? 800 : maxValue;
 
   return Plot.plot({
-    title: `${delitoSeleccionado}`,
+    title: `${delitoSeleccionado == familiaDelitoSeleccionada ? delitoSeleccionado : `${familiaDelitoSeleccionada} - ${delitoSeleccionado}`}`,
     subtitle: `${comunaSeleccionada.Comuna}`,
     caption: `Fuente de datos:  
 CEAD, Centro de Estudios y Análisis del Delito, \nhttps://cead.spd.gov.cl/estadisticas-delictuales/`,
