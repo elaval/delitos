@@ -52,9 +52,13 @@ const comunaSeleccionada = view(Inputs.select(
 ```
 *Nota: se incluyen comunas con más de 100 mil habitantes, y en el gráfico se agregan comunas re referencia según las cifras en los últimos 6 trimestres*
 
+<div class="card">
+<div>${chart}</div>
+<div style="color:grey;">Fuente de datos: CEAD, Centro de Estudios y Análisis del Delito, https://cead.spd.gov.cl/estadisticas-delictuales</div>
+</div><!--card-->
 
 ```js
-(() => {
+const chart = (() => {
   const comunaFoco = comunaSeleccionada["Comuna"];
   const opacityReference = 0.4;
   const dataPlot = dataReferencia
@@ -85,8 +89,6 @@ const comunaSeleccionada = view(Inputs.select(
   return Plot.plot({
     title: `${delitoSeleccionado == familiaDelitoSeleccionada ? delitoSeleccionado : `${familiaDelitoSeleccionada} - ${delitoSeleccionado}`}`,
     subtitle: `${comunaSeleccionada.Comuna}`,
-    caption: `Fuente de datos:  
-CEAD, Centro de Estudios y Análisis del Delito, \nhttps://cead.spd.gov.cl/estadisticas-delictuales/`,
     marginRight: 100,
 
     x: { grid: true },
