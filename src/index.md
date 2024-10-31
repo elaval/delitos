@@ -88,7 +88,7 @@ const comunaSeleccionada = view(Inputs.select(
     subtitle: `${comunaSeleccionada.Comuna}`,
     caption: `Fuente de datos:  
 CEAD, Centro de Estudios y Análisis del Delito, \nhttps://cead.spd.gov.cl/estadisticas-delictuales/`,
-    marginRight: 200,
+    marginRight: 100,
 
     x: { grid: true },
     y: {
