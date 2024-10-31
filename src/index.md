@@ -185,8 +185,8 @@ const chart = (() => {
 
 ```
 
-### Comunas de Referencia en últimos 12 meses (Julio 2023 a Junio 2024)
-*Entre comunas con más de 100 mil habitantes*
+### Comunas de Referencia (Julio 2023 a Junio 2024)
+*Se consideran 63 comunas con más de 100 mil habitantes*
 ```js
 Inputs.table(quartiles)
 ```
