@@ -12,7 +12,8 @@ Esta página muestra la tasa de delitos (cada 100 mil habitantes) para la comuna
 
 La cifra de delitos se refiere a la tasa de **Casos Policiales** en los últimos 12 meses (se suma la tasa de los últimos 4 trimestres para cada punto en el tiempo asociado a un trimestre). 
 
-**Casos Policiales** "Es el indicador utilizado para analizar la ocurrencia de hechos delictivos. Considera las denuncias de delitos que realiza la comunidad en las unidades policiales, más las detenciones que realizan las policías ante la ocurrencia de delitos flagrantes. Internacionalmente este indicador es conocido como 'delitos conocidos por la policía' (crimes known to police). Esta información está disponible desde el año 2005.", CEAD
+**Casos Policiales**  
+"Es el indicador utilizado para analizar la ocurrencia de hechos delictivos. Considera las denuncias de delitos que realiza la comunidad en las unidades policiales, más las detenciones que realizan las policías ante la ocurrencia de delitos flagrantes. Internacionalmente este indicador es conocido como 'delitos conocidos por la policía' (crimes known to police). Esta información está disponible desde el año 2005." - CEAD
 
 
 
@@ -50,7 +51,7 @@ const comunaSeleccionada = view(Inputs.select(
     format: (d) => `${d.Comuna} (${d3.format(".3s")(d.población)} habs.)`
   }));
 ```
-*Nota: se incluyen comunas con más de 100 mil habitantes, y en el gráfico se agregan comunas re referencia según las cifras en los últimos 6 trimestres*
+*Nota: se incluyen comunas con más de 100 mil habitantes, y en el gráfico se agregan comunas re referencia según las cifras de Julio 2023 a Junio 2024*
 
 <div class="card">
 <div>${chart}</div>
