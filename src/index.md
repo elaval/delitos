@@ -4,6 +4,7 @@ toc: false
 sql:
   delitos: data/combined_data.parquet
   poblacion: data/comunasPoblacion.tsv
+  maxValues: data/maxValues.tsv
 ---
 
 # Tasa de Delitos por comuna en Chile
@@ -71,10 +72,6 @@ const comunaSeleccionada = view(Inputs.select(
     .filter((d) => d.Delito.match(/|/))
     .filter((d) => d.fecha <= convertToChartDate("2024", "TRIM 2"))
 
-  const maxValue = _.chain(dataPlot)
-    .map((d) => d.Valor)
-    .max()
-    .value();
 
   const rollsum = Plot.window({
     k: 4,
@@ -82,6 +79,8 @@ const comunaSeleccionada = view(Inputs.select(
     reduce: "sum",
     strict: true
   });
+
+  const maxYValue = delitoSeleccionado.match(/Violaciones y delitos sexuales/) && comunaSeleccionada.Comuna.match(/Alto Hospicio/) ? 800 : maxValue;
 
   return Plot.plot({
     title: `${delitoSeleccionado}`,
@@ -93,12 +92,26 @@ CEAD, Centro de Estudios y Análisis del Delito, \nhttps://cead.spd.gov.cl/estad
     x: { grid: true },
     y: {
       grid: true,
-      domain: [0, maxValue * 4],
+      domain: [0, maxYValue],
       label: "Delitos cada 100 mil habitantes (últimos 12 meses)"
     },
     color: { legend: true, domain: [comunaFoco].concat(comunasReferencia) },
     width,
     marks: [
+      Plot.ruleY(
+        dataPlot.filter((d) => d.Comuna == comunaSeleccionada.Comuna),
+        Plot.selectLast(
+          Plot.windowY(
+            { k: 4, reduce: "sum", anchor: "end" },
+            {
+              y: "Valor",
+              stroke: (d) => d.Comuna,
+              strokeDasharray: "1",
+              sort: (d) => d["fecha"].toDate()
+            }
+          )
+        )
+      ),
       Plot.ruleY([0]),
       Plot.lineY(
         dataPlot,
@@ -249,6 +262,13 @@ const dataReferencia = [...result]
 
 ```
 
+
+```sql id=[{maxValue}] 
+SELECT MaxRollingSum as maxValue
+FROM maxValues 
+WHERE Delito = ${delitoSeleccionado}
+LIMIT 1
+```
 
 
 
