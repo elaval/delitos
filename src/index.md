@@ -10,7 +10,7 @@ sql:
 # Tasa de Delitos por comuna en Chile
 Esta página muestra la tasa de delitos (cada 100 mil habitantes) para la comuna seleccionada a lo largo del tiempo.  
 
-La cifra de delitos se refiere a la tasa de **Casos Policiales** en los últimos 12 meses (se suma la tasa de los últimos 4 trimestres para cada punto en el tiempo asociado a un trimestre). 
+La cifra de delitos se refiere a la tasa de **Casos Policiales** en los últimos 12 meses (se suma la tasa de los 4 trimestres previos cada punto en el tiempo asociado a un trimestre). 
 
 **Casos Policiales**  
 "Es el indicador utilizado para analizar la ocurrencia de hechos delictivos. Considera las denuncias de delitos que realiza la comunidad en las unidades policiales, más las detenciones que realizan las policías ante la ocurrencia de delitos flagrantes. Internacionalmente este indicador es conocido como 'delitos conocidos por la policía' (crimes known to police). Esta información está disponible desde el año 2005." - CEAD
