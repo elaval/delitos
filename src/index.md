@@ -84,8 +84,15 @@ const chart = (() => {
     strict: true
   });
 
-  const maxYValue = delitoSeleccionado.match(/Violaciones y delitos sexuales/) && comunaSeleccionada.Comuna.match(/Alto Hospicio/) ? 800 : maxValue;
-
+  const maxYValue = 
+    delitoSeleccionado.match(/Violaciones y delitos sexuales/) && comunaSeleccionada.Comuna.match(/Alto Hospicio/) 
+    ? 800 
+    : delitoSeleccionado.match(/simples delitos ley de armas/) && comunaSeleccionada.Comuna.match(/Quinta Normal/)
+    ? 1100
+    : delitoSeleccionado.match(/Delitos asociados a armas/) && comunaSeleccionada.Comuna.match(/Quinta Normal/)
+    ? 1100
+    : maxValue
+   
   return Plot.plot({
     title: `${delitoSeleccionado == familiaDelitoSeleccionada ? delitoSeleccionado : `${familiaDelitoSeleccionada} - ${delitoSeleccionado}`}`,
     subtitle: `${comunaSeleccionada.Comuna}`,

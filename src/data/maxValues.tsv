@@ -2,9 +2,9 @@ Delito	Comuna	Año	Trimestre	MaxRollingSum
 Amenazas con armas	Renca	2007	TRIM 4	107.58694887549998
 Amenazas o riña	La Pintana	2011	TRIM 4	1486.9986176011002
 Consumo de alcohol y drogas en la vía pública	Peñaflor	2016	TRIM 2	4795.898417524
-Crímenes y simples delitos ley de armas	Quinta Normal	2009	TRIM 3	1043.9108974574
+Crímenes y simples delitos ley de armas	Quinta Normal-TRUNCADO	2009	TRIM 3	500
 Daños	Providencia	2013	TRIM 3	1560.6097020755
-Delitos asociados a armas	Quinta Normal	2009	TRIM 4	1083.5871343232
+Delitos asociados a armas	Quinta Normal-TRUNCADO	2009	TRIM 4	600
 Delitos asociados a drogas	Lo Prado	2011	TRIM 1	441.6583357054
 Delitos contra la propiedad no violentos	Providencia	2014	TRIM 1	9458.9162384358
 Delitos violentos	Santiago	2008	TRIM 1	5516.9845147405995
