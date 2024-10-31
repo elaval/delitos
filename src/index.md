@@ -171,6 +171,7 @@ CEAD, Centro de Estudios y Análisis del Delito, \nhttps://cead.spd.gov.cl/estad
 ```
 
 ### Comunas de Referencia en últimos 12 meses (Julio 2023 a Junio 2024)
+*Entre comunas con más de 100 mil habitantes*
 ```js
 Inputs.table(quartiles)
 ```
@@ -293,9 +294,9 @@ SELECT
     Valor as "Tasa de delitos",
     CASE
         WHEN ROUND(Valor,4) = ROUND(q.MinValue,4) THEN 'Min'
-        WHEN ROUND(Valor,4) = ROUND(q.Q1,4) THEN 'Q1'
-        WHEN ROUND(Valor,4) = ROUND(q.Median,4) THEN 'Mediana'
-        WHEN ROUND(Valor,4) = ROUND(q.Q3,4) THEN 'Q3'
+        WHEN ROUND(Valor,4) = ROUND(q.Q1,4) THEN 'P25'
+        WHEN ROUND(Valor,4) = ROUND(q.Median,4) THEN 'P50 (Mediana)'
+        WHEN ROUND(Valor,4) = ROUND(q.Q3,4) THEN 'P75'
         WHEN ROUND(Valor,4) = ROUND(q.MaxValue,4) THEN 'Max'
     END AS "Posición"
 FROM 
