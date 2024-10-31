@@ -193,6 +193,7 @@ const chart = (() => {
 ```
 
 ### Comunas de Referencia (Julio 2023 a Junio 2024)
+#### ${delitoSeleccionado}
 *Se consideran 63 comunas con más de 100 mil habitantes*
 ```js
 Inputs.table(quartiles)
