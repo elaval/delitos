@@ -106,7 +106,7 @@ const chart = (() => {
       label: "Delitos cada 100 mil habitantes (últimos 12 meses)"
     },
     color: { legend: true, domain: [comunaFoco].concat(comunasReferencia) },
-    width,
+    //width,
     marks: [
       Plot.ruleY(
         dataPlot.filter((d) => d.Comuna == comunaSeleccionada.Comuna),
